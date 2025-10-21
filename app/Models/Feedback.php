@@ -11,6 +11,7 @@ class Feedback extends Model
 
     protected $fillable = [
         'user_id',
+<<<<<<< HEAD
         'artist_id',
         'appointment_id',
         'rating_positive',
@@ -19,6 +20,17 @@ class Feedback extends Model
 
     protected $casts = [
         'rating_positive' => 'boolean',
+=======
+        'service_id',
+        'rating',
+        'comment',
+        'created_at',
+    ];
+
+    protected $casts = [
+        'rating' => 'integer',
+        'created_at' => 'datetime',
+>>>>>>> 44cb65d (migrations and models)
     ];
 
     public function user()
@@ -26,6 +38,7 @@ class Feedback extends Model
         return $this->belongsTo(User::class);
     }
 
+<<<<<<< HEAD
     public function artist()
     {
         return $this->belongsTo(Artist::class);
@@ -46,5 +59,10 @@ class Feedback extends Model
     public function scopeNegative($query)
     {
         return $query->where('rating_positive', false);
+=======
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+>>>>>>> 44cb65d (migrations and models)
     }
 }
