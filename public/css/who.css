@@ -1,0 +1,415 @@
+@font-face {
+    font-family: "ISOCPEUR";
+    src: url(fonts/ISOCPEUR.ttf);
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(fonts/MuseoModerno-Regular.ttf);
+}
+
+@font-face {
+    font-family: "MuseoModerno.Bold";
+    src: url(fonts/MuseoModerno-Bold.ttf);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E2E2E2;
+}
+
+.head {
+    max-width: 1620px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 7%;
+}
+
+.logo {
+    max-width: 232px;
+    max-height: 117px;
+    padding-top: 0.9%;
+
+}
+
+.head > nav {
+    display: flex;
+    gap: 60px;
+    padding-top: 5%;
+    max-width: 500px;
+}
+
+.head > nav > a {
+    text-decoration: none;
+    color: #464646;
+    font-size: 18pt;
+    font-family: "ISOCPEUR", sans-serif;
+}
+
+main {
+display: flex;
+    background: url("LuckyStrike.svg") top 3% left 86% no-repeat,
+    url("LuckyStrike.svg") top 21% left 14%/ 122px 178px no-repeat,
+    url("woman.png") top 100% left 86% no-repeat,
+    url("branchUp.svg") top 66.5% left 6% no-repeat,
+    url("branchDown.svg") top 43% left 39% no-repeat;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.max {
+    font-family: 'museoModerno.Bold', sans-serif;
+    font-size: 113pt;
+    color: #464646;
+    margin-left: 335px;
+    line-height: 1;
+    margin-top: 87px;
+}
+
+.mini {
+    font-family: 'museoModerno.Bold', sans-serif;
+    font-size: 96px;
+    color: #E2E2E2;
+    margin-left: 740px;
+    line-height: 1;
+    -webkit-text-stroke: 3px #464646;
+}
+
+.rose {
+    color: #FE4A9A;
+}
+
+.mini_mini {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 60px;
+    white-space: pre-line;
+    color: #464646;
+    margin-left: 151px;
+    margin-top: 166px;
+}
+
+.text > input {
+    width: 270px;
+    height: 80px;
+    font-size: 44px;
+    font-family: "ISOCPEUR", sans-serif;
+    border-radius: 15px;
+    border-color: #FE4A9A;
+    margin-top: 55px;
+    margin-left: 383px;
+    background-color: #E2E2E2;
+    margin-bottom: 333px;
+}
+
+.text > input:hover {
+    background-color: #FE4A9A;
+    color: #E2E2E2;
+}
+
+main > nav {
+    display: flex;
+    flex-direction: column;
+    margin-left: 132px;
+    margin-top: 120px;
+    gap: 40px;
+}
+
+main > nav > a {
+    filter: saturate(0%);
+}
+
+main > nav > a:hover {
+    filter: saturate(100%);
+}
+
+footer {
+    background-color: rgba(219, 159, 165, .14);
+    padding-top: 2.2%;
+    padding-bottom: 2.2%;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1270px;
+    margin-left: 133px;
+}
+
+.bigger {
+    font-size: 18pt;
+    margin-bottom: 19%;
+}
+
+.up {
+    margin-top: 13%;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+.write {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+.write > nav {
+    display: flex;
+    gap: 20px;
+}
+
+.write > nav > a > img{
+    height: 40px;
+    width: 40px;
+}
+
+.call {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+
+@media (max-width: 1280px) {
+    .head {
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+    .logo > img {
+        width: 150px;
+        height: 82px;
+    }
+    .head > nav {
+        gap: 40px;
+    }
+    .head > nav > a {
+        font-size: 15pt;
+    }
+    .max {
+        font-size: 72pt;
+        margin-left: 248px;
+    }
+    .mini {
+        font-size: 48pt;
+        margin-left: 490px;
+    }
+    .mini_mini {
+        font-size: 27pt;
+        margin-left: 130px;
+        margin-top: 93px;
+    }
+    .text > input {
+        width: 156px;
+        height: 50px;
+        font-size: 18pt;
+        margin-top: 38px;
+        margin-left: 285px;
+        margin-bottom: 66px;
+    }
+    main > nav {
+        margin-left: 75px;
+        margin-top: 94px;
+    }
+    main > nav > a > img {
+        height: 40px;
+        width: 40px;
+    }
+    .cont {
+        max-width: 830px;
+        margin-left: 124px;
+    }
+    .bigger {
+        font-size: 15pt;
+        margin-bottom: 19%;
+    }
+    .time {
+        font-size: 12pt;
+    }
+
+    .write {
+        font-size: 12pt;
+    }
+    .write > nav > a > img{
+        height: 30px;
+        width: 30px;
+    }
+    .call {
+        font-size: 12pt;
+    }
+    main {
+        display: flex;
+        background: url("LuckyStrike.svg") top 3% left 86%/ 0 0 no-repeat,
+        url("LuckyStrike.svg") top 21% left 14%/ 0 0 no-repeat,
+        url("woman.png") top 105px left 667px/ 380px 480px no-repeat,
+        url("branchUp.svg") top 66.5% left 6%/ 0 0 no-repeat,
+        url("branchDown.svg") top 43% left 39%/ 0 0 no-repeat;
+    }
+}
+
+@media (max-width: 1040px) {
+    .head {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .logo > img {
+        width: 150px;
+        height: 82px;
+    }
+    .head > nav {
+        gap: 30px;
+    }
+    .head > nav > a {
+        font-size: 15pt;
+    }
+    .max {
+        font-size: 60pt;
+        margin-left: 220px;
+    }
+    .mini {
+        font-size: 36pt;
+        margin-left: 450px;
+    }
+    .mini_mini {
+        font-size: 24pt;
+        margin-left: 110px;
+        margin-top: 80px;
+    }
+    .text > input {
+        width: 136px;
+        height: 40px;
+        font-size: 15pt;
+        margin-top: 38px;
+        margin-left: 235px;
+        margin-bottom: 66px;
+    }
+    main > nav {
+        margin-left: 75px;
+        margin-top: 94px;
+    }
+    main > nav > a > img {
+        height: 40px;
+        width: 40px;
+    }
+    .cont {
+        max-width: 830px;
+        margin-left: 124px;
+        gap: 20px;
+    }
+    .bigger {
+        font-size: 15pt;
+        margin-bottom: 19%;
+    }
+    .time {
+        font-size: 12pt;
+    }
+
+    .write {
+        font-size: 12pt;
+    }
+    .write > nav > a > img{
+        height: 30px;
+        width: 30px;
+    }
+    .call {
+        font-size: 12pt;
+    }
+    main {
+        display: flex;
+        background: url("LuckyStrike.svg") top 3% left 86%/ 0 0 no-repeat,
+        url("LuckyStrike.svg") top 21% left 14%/ 0 0 no-repeat,
+        url("woman.png") top 85px left 570px/ 340px 440px no-repeat,
+        url("branchUp.svg") top 66.5% left 6%/ 0 0 no-repeat,
+        url("branchDown.svg") top 43% left 39%/ 0 0 no-repeat;
+    }
+}
+
+@media (max-width: 440px) {
+    .head {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    .logo > img {
+        width: 90px;
+        height: 50px;
+    }
+    .head > nav {
+        gap: 20px;
+    }
+    .head > nav > a {
+        font-size: 12pt;
+    }
+    .max {
+        font-size: 27pt;
+        margin-left: 72px;
+    }
+    .mini {
+        font-size: 22pt;
+        margin-left: 150px;
+        -webkit-text-stroke: 1px #464646;
+    }
+    .mini_mini {
+        font-size: 14pt;
+        margin-left: 40px;
+        margin-top: 94px;
+    }
+    .text > input {
+        border-radius: 10px;
+        width: 107px;
+        height: 32px;
+        font-size: 12pt;
+        margin-top: 28px;
+        margin-left: 113px;
+        margin-bottom: 89px;
+    }
+    main > nav {
+        display: none;
+    }
+    .cont {
+        flex-direction: column;
+        max-width: 140px;
+        margin: 0 auto;
+    }
+    .bigger {
+        font-size: 12pt;
+        margin-bottom: 19%;
+    }
+    .time {
+        font-size: 9pt;
+    }
+
+    .write {
+        font-size: 9pt;
+    }
+    .write > nav > a > img{
+        height: 20px;
+        width: 20px;
+    }
+    .call {
+        font-size: 9pt;
+    }
+    main {
+        display: flex;
+        background: url("LuckyStrike.svg") top 3% left 86%/ 0 0 no-repeat,
+        url("LuckyStrike.svg") top 21% left 14%/ 0 0 no-repeat,
+        url("woman.png") top 60px left 170px/ 280px 380px no-repeat,
+        url("branchUp.svg") top 66.5% left 6%/ 0 0 no-repeat,
+        url("branchDown.svg") top 43% left 39%/ 0 0 no-repeat;
+    }
+
+}
