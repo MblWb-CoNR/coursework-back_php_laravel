@@ -11,16 +11,9 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $fillable = [
-<<<<<<< HEAD
         'email',
         'password',
         'username',
-=======
-        'name',
-        'email',
-        'password',
-        'avatar_id',
->>>>>>> 44cb65d (migrations and models)
         'role_id',
     ];
 
@@ -37,21 +30,12 @@ class User extends Authenticatable
         ];
     }
 
-<<<<<<< HEAD
     // Отношения
-=======
-    public function avatar()
-    {
-        return $this->belongsTo(Avatar::class);
-    }
-
->>>>>>> 44cb65d (migrations and models)
     public function role()
     {
         return $this->belongsTo(Role::class);
     }
 
-<<<<<<< HEAD
     public function profile()
     {
         return $this->hasOne(UserProfile::class);
@@ -70,11 +54,6 @@ class User extends Authenticatable
     public function appointments()
     {
         return $this->hasMany(Appointment::class);
-=======
-    public function signUps()
-    {
-        return $this->hasMany(SignUp::class);
->>>>>>> 44cb65d (migrations and models)
     }
 
     public function feedbacks()
@@ -82,7 +61,6 @@ class User extends Authenticatable
         return $this->hasMany(Feedback::class);
     }
 
-<<<<<<< HEAD
     // Хелперы
     public function isAdmin()
     {
@@ -92,10 +70,5 @@ class User extends Authenticatable
     public function isArtist()
     {
         return $this->artist !== null;
-=======
-    public function sketches()
-    {
-        return $this->hasMany(Sketch::class);
->>>>>>> 44cb65d (migrations and models)
     }
 }

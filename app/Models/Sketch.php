@@ -9,7 +9,6 @@ class Sketch extends Model
 {
     use HasFactory;
 
-<<<<<<< HEAD
     protected $fillable = ['artist_id', 'image_path', 'title', 'is_public'];
 
     public function artist()
@@ -26,24 +25,5 @@ class Sketch extends Model
     public function scopePublic($query)
     {
         return $query->where('is_public', true);
-=======
-    protected $fillable = [
-        'user_id',
-        'title',
-        'description',
-        'image_path',
-        'created_at',
-        'updated_at',
-    ];
-
-    protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-    ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
->>>>>>> 44cb65d (migrations and models)
     }
 }

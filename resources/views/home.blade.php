@@ -17,18 +17,18 @@
     <div class="head">
         <a class="logo" href="{{ route('home') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
         <nav>
-            <a href="{{ route('works') }}">Работы</a>
-            <a href="{{ route('masters') }}">Мастера</a>
-            <a href="{{ route('contacts') }}">Контакты</a>
-            <a href="{{ route('sign_up') }}">Запись</a>
+            <li><a href="{{ route('works') }}">Работы</a></li>
+            <li><a href="{{ route('masters') }}">Мастера</a></li>
+            <li><a href="{{ route('contacts') }}">Контакты</a></li>
+            <li><a href="{{ route('sign_up') }}">Запись</a></li>
             @auth
-                <a href="{{ route('profile') }}">Профиль</a>
-                <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                <li><a href="{{ route('profile') }}">Профиль</a></li>
+                <li><form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer;">Выйти</button>
-                </form>
+                    <button type="submit">Выйти</button>
+                </form></li>
             @else
-                <a href="{{ route('auth.form') }}">Войти</a>
+                <li><a href="{{ route('auth.form') }}">Войти</a></li>
             @endauth
         </nav>
     </div>
@@ -37,7 +37,8 @@
     <div class="text">
         <p class="max">TATTOO STUDIO</p>
         <p class="mini">ALL <span class="rose">FINE</span></p>
-        <p class="mini_mini">[преврати свою кожу в произведение искусства]</p>
+        <p class="mini_mini">[преврати свою кожу
+                         в произведение искусства]</p>
         @auth
             <a href="{{ route('sign_up') }}"><input type="button" value="Записаться"></a>
         @else
@@ -45,10 +46,10 @@
         @endauth
     </div>
     <nav>
-        <a href="#"><img src="{{ asset('img/tgRose.svg') }}" alt="tg"></a>
-        <a href="#"><img src="{{ asset('img/vkRose.svg') }}" alt="vk"></a>
-        <a href="#"><img src="{{ asset('img/instRose.svg') }}" alt="inst"></a>
-        <a href="#"><img src="{{ asset('img/pinRose.svg') }}" alt="pin"></a>
+        <a href="/"><img src="{{ asset('img/tgRose.svg') }}" alt="tg"></a>
+        <a href="/"><img src="{{ asset('img/vkRose.svg') }}" alt="vk"></a>
+        <a href="/"><img src="{{ asset('img/instRose.svg') }}" alt="inst"></a>
+        <a href="/"><img src="{{ asset('img/pinRose.svg') }}" alt="pin"></a>
     </nav>
 </main>
 <footer>
@@ -63,10 +64,10 @@
         <div class="write">
             <p class="bigger">Написать</p>
             <nav>
-                <a href="#"><img src="{{ asset('img/telegram.svg') }}" alt="tg"></a>
-                <a href="#"><img src="{{ asset('img/vk.svg') }}" alt="vk"></a>
-                <a href="#"><img src="{{ asset('img/instagram.svg') }}" alt="inst"></a>
-                <a href="#"><img src="{{ asset('img/pinterest-64.svg') }}" alt="pin"></a>
+                <a href="/"><img src="{{ asset('img/telegram.svg') }}" alt="tg"></a>
+                <a href="/"><img src="{{ asset('img/vk.svg') }}" alt="vk"></a>
+                <a href="/"><img src="{{ asset('img/instagram.svg') }}" alt="inst"></a>
+                <a href="/"><img src="{{ asset('img/pinterest-64.svg') }}" alt="pin"></a>
             </nav>
             <p class="up">all.fine@tattoo.ru</p>
         </div>

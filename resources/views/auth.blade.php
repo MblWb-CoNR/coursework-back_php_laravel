@@ -54,7 +54,7 @@
 
     <div class="sign">
         <!-- Регистрация -->
-        <div class="online" @if(session('active_tab') == 'login') style="display:none;" @endif id="registerForm">
+        <div class="online" @if(session('active_tab') == 'login') @endif id="registerForm">
             <p>Зарегистрироваться</p>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -88,7 +88,7 @@
         </div>
 
         <!-- Вход -->
-        <div class="free" @if(session('active_tab') != 'login') style="display:none;" @endif id="loginForm">
+        <div class="free" @if(session('active_tab') != 'login') @endif id="loginForm">
             <p>Войти</p>
             <form method="POST" action="{{ route('login') }}">
                 @csrf

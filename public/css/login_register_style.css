@@ -1,0 +1,241 @@
+@font-face {
+    font-family: "ISOCPEUR";
+    src: url(fonts/ISOCPEUR.ttf);
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(fonts/MuseoModerno-Regular.ttf);
+}
+
+@font-face {
+    font-family: "MuseoModerno.Bold";
+    src: url(fonts/MuseoModerno-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E2E2E2;
+}
+
+.head {
+    max-width: 1620px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 7%;
+}
+
+.logo {
+    max-width: 232px;
+    max-height: 117px;
+    padding-top: 0.9%;
+
+}
+
+.head > nav {
+    display: flex;
+    gap: 60px;
+    padding-top: 5%;
+    max-width: 500px;
+}
+
+.head > nav > a {
+    text-decoration: none;
+    color: #464646;
+    font-size: 18pt;
+    font-family: "ISOCPEUR", sans-serif;
+}
+
+main > p {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 27pt;
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 110px;
+}
+
+.inst {
+    display: flex;
+    gap: 4.6%;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 18pt;
+    margin-top: 42px;
+}
+
+.inst > img {
+    height: 40px;
+    width: 40px;
+}
+
+.sign {
+    max-width: 570px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.online {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+}
+
+.online > p {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 24pt;
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.online > form > label {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 22pt;
+
+}
+
+.online > form > input {
+    font-family: "ISOCPEUR", sans-serif;
+    background-color: #DB9FA5;
+    font-size: 15pt;
+    border: none;
+    border-radius: 10px;
+    width: 540px;
+    height: 88px;
+    padding-left: 20px;
+    margin-bottom: 42px;
+    margin-top: 11px;
+}
+
+
+button {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 24px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    background-color: #E2E2E2;
+    text-decoration: none;
+    color: #464646;
+    border: #FE4A9A 1px solid;
+    width: 260px;
+    text-align: center;
+
+}
+
+button:hover {
+    background-color: #FE4A9A;
+    color: #E2E2E2;
+    cursor: pointer;
+}
+
+#masters {
+    font-family: "ISOCPEUR", sans-serif;
+    background-color: #DB9FA5;
+    color: gray;
+    font-size: 15pt;
+    border: none;
+    border-radius: 10px;
+    width: 560px;
+    height: 88px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tg {
+    margin-top: 110px;
+}
+
+.tg > p {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 24pt;
+}
+
+.free {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+}
+
+.free > p {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 24pt;
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.free > form > label {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 22pt;
+    margin-top: 42px;
+}
+
+.free > form > input {
+    font-family: "ISOCPEUR", sans-serif;
+    background-color: #DB9FA5;
+    font-size: 15pt;
+    border: none;
+    border-radius: 10px;
+    width: 540px;
+    height: 88px;
+    padding-left: 20px;
+    margin-bottom: 42px;
+    margin-top: 11px;
+}
+
+
+footer {
+    background-color: rgba(219, 159, 165, .14);
+    padding-top: 2.2%;
+    padding-bottom: 2.2%;
+    margin-top: 110px;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1270px;
+    margin-left: 133px;
+}
+
+.bigger {
+    font-size: 18pt;
+    margin-bottom: 19%;
+}
+
+.up {
+    margin-top: 13%;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+.write {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+.write > nav {
+    display: flex;
+    gap: 20px;
+}
+
+.write > nav > a > img{
+    height: 40px;
+    width: 40px;
+}
+
+.call {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}

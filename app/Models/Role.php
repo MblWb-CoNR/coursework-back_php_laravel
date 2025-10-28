@@ -9,19 +9,7 @@ class Role extends Model
 {
     use HasFactory;
 
-<<<<<<< HEAD
     protected $fillable = ['name'];
-=======
-    protected $fillable = [
-        'name',
-        'description',
-        'permissions',
-    ];
-
-    protected $casts = [
-        'permissions' => 'array',
-    ];
->>>>>>> 44cb65d (migrations and models)
 
     public function users()
     {
