@@ -18,7 +18,7 @@
         <a class="logo" href="{{ route('home') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
         <nav>
             <li><a href="{{ route('portfolio.index') }}">Работы</a></li>
-            <li><a href="{{ route('masters') }}">Мастера</a></li>
+            <li><a href="{{ route('artists.index') }}">Мастера</a></li>
             <li><a href="{{ route('contacts') }}">Контакты</a></li>
             <li><a href="{{ route('sign_up') }}">Запись</a></li>
             @auth

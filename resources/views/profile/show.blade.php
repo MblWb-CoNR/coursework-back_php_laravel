@@ -95,7 +95,7 @@
         <a class="logo" href="{{ route('home') }}"><img src="/img/logo.svg" alt="logo"></a>
         <nav>
             <a href="{{ route('portfolio.index') }}">Работы</a>
-            <a href="{{ route('masters') }}">Мастера</a>
+            <a href="{{ route('artists.index') }}">Мастера</a>
             <a href="{{ route('contacts') }}">Контакты</a>
             <a href="{{ route('sign_up') }}">Запись</a>
             <a href="{{ route('profile') }}" style="text-decoration: underline;">Профиль</a>
@@ -123,7 +123,7 @@
             </div>
         @endif
 
-        {{-- resources/views/profile/show.blade.php --}}
+        {{-- resources/views/profile/index.blade.php --}}
 
         <!-- ЗАМЕНИТЕ всю форму на эту версию: -->
         <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data" id="profileForm">
