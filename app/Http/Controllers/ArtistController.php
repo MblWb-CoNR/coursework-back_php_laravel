@@ -32,7 +32,7 @@ class ArtistController extends Controller
             'portfolios',
             'prices.service',
             'user.avatar',
-            'feedbacks.user.avatar'
+//            'feedbacks.user.avatar'
         ])->findOrFail($id);
 
         $services = Service::all();
@@ -40,7 +40,34 @@ class ArtistController extends Controller
         $negativeFeedbacks = $artist->feedbacks->where('rating_positive', false);
 
         return view('artists.show', compact('artist', 'services', 'positiveFeedbacks', 'negativeFeedbacks'));
+
+        // Загружаем отзывы отдельно
+        $positiveFeedbacks = collect([]);
+        $negativeFeedbacks = collect([]);
+
+        try {
+            // Загружаем отзывы отдельным запросом
+            $feedbacks = \App\Models\Feedback::with('user.avatar')
+                ->where('artist_id', $artist->id)
+                ->get();
+
+            $positiveFeedbacks = $feedbacks->where('rating_positive', true);
+            $negativeFeedbacks = $feedbacks->where('rating_positive', false);
+
+        } catch (\Exception $e) {
+            \Log::error('Error loading feedbacks: ' . $e->getMessage());
+        }
+
+        $services = Service::all();
+
+        return view('artists.show', compact('artist', 'services', 'positiveFeedbacks', 'negativeFeedbacks'));
+
+//        catch (\Exception $e) {
+//            \Log::error('Error in artist show: ' . $e->getMessage());
+//            abort(404, 'Мастер не найден');
+//        }
     }
+
 
     // Добавление отзыва
     public function storeFeedback(Request $request, $artistId)

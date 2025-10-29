@@ -6,88 +6,6 @@
     <title>Профиль - All Fine</title>
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
-    <style>
-        .profile-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .avatar-section {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .avatar-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #333;
-        }
-        .avatar-placeholder {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            border: 3px solid #333;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-        .btn-primary {
-            background: #333;
-            color: white;
-        }
-        .btn-danger {
-            background: #dc3545;
-            color: white;
-        }
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-        .message {
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-        .success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        .error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        .avatar-actions {
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -98,10 +16,10 @@
             <a href="{{ route('artists.index') }}">Мастера</a>
             <a href="{{ route('contacts') }}">Контакты</a>
             <a href="{{ route('sign_up') }}">Запись</a>
-            <a href="{{ route('profile') }}" style="text-decoration: underline;">Профиль</a>
-            <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+            <a href="{{ route('profile') }}">Профиль</a>
+            <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer;">Выйти</button>
+                <button type="submit" class="logout_btn">Выйти</button>
             </form>
         </nav>
     </div>
@@ -109,7 +27,7 @@
 
 <main>
     <div class="profile-container">
-        <h1>Мой профиль</h1>
+        <p>[профиль]</p>
 
         @if(session('success'))
             <div class="message success">
@@ -123,9 +41,6 @@
             </div>
         @endif
 
-        {{-- resources/views/profile/index.blade.php --}}
-
-        <!-- ЗАМЕНИТЕ всю форму на эту версию: -->
         <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data" id="profileForm">
             @csrf
             @method('PUT')
@@ -153,7 +68,6 @@
                     </div>
                 @endif
 
-                <!-- ВАЖНО: input должен быть ВНУТРИ формы и иметь name="avatar" -->
                 <input type="file" id="avatar_input" name="avatar" accept="image/*" style="display: none;">
             </div>
 
@@ -161,7 +75,7 @@
             <div class="form-group">
                 <label for="email">Электронная почта</label>
                 <input type="email" id="email" value="{{ $user->email }}" disabled>
-                <small style="color: #666;">Email нельзя изменить</small>
+                <p style="color: #666;">Email нельзя изменить</p>
             </div>
 
             <div class="form-group">

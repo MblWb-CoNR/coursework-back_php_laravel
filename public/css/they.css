@@ -1,0 +1,461 @@
+@font-face {
+    font-family: "ISOCPEUR";
+    src: url(fonts/ISOCPEUR.ttf);
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url(fonts/MuseoModerno-Regular.ttf);
+}
+
+@font-face {
+    font-family: "MuseoModerno.Bold";
+    src: url(fonts/MuseoModerno-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E2E2E2;
+}
+
+.head {
+    max-width: 1620px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 7%;
+}
+
+.logo {
+    max-width: 232px;
+    max-height: 117px;
+    padding-top: 0.9%;
+
+}
+
+.head > nav {
+    display: flex;
+    gap: 60px;
+    padding-top: 5%;
+    max-width: 800px;
+}
+
+.head > nav > a {
+    text-decoration: none;
+    color: #464646;
+    font-size: 18pt;
+    font-family: "ISOCPEUR", sans-serif;
+}
+
+.logout_btn {
+    background: none;
+    border: none;
+    color: #464646;
+    cursor: pointer;
+    font-family: 'ISOCPEUR',
+    sans-serif;
+    font-size: 18pt;
+}
+
+main > p {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 27pt;
+    margin-top: 2.6%;
+    margin-bottom: 5.8%;
+    margin-left: 46%;
+}
+
+.masters {
+    display: flex;
+    margin-left: 7.2%;
+    font-family: "ISOCPEUR", sans-serif;
+    max-width: 1660px;
+    justify-content: space-between;
+}
+
+.mas_left {
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+}
+
+.mas_right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 13.8%;
+    gap: 245px;
+    margin-bottom: 11%;
+}
+
+.leoka {
+    display: flex;
+    gap: 3.8%;
+    max-width: 640px;
+}
+
+.supegoran {
+    display: flex;
+    gap: 3.8%;
+    max-width: 640px;
+}
+
+.frolikus {
+    display: flex;
+    gap: 4.2%;
+    max-width: 640px;
+}
+
+.black_geo {
+    display: flex;
+    gap: 4.2%;
+    max-width: 640px;
+}
+
+.name {
+    flex: 0 0 auto;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    margin-top: 6%;
+}
+
+.inst {
+    display: flex;
+    gap: 4.6%;
+}
+
+.inst > img {
+    height: 40px;
+    width: 40px;
+}
+
+.naming {
+    font-size: 18pt;
+}
+
+.style {
+    font-size: 15pt;
+}
+
+.nickname {
+    font-size: 18pt;
+    margin-top: 4%;
+}
+
+.butt {
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 24px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    background-color: #E2E2E2;
+    margin-top: 40px;
+    text-decoration: none;
+    color: #464646;
+    border: #FE4A9A 1px solid;
+    width: 110px;
+    text-align: center;
+}
+
+.butt:hover {
+    background-color: #FE4A9A;
+    color: #E2E2E2;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer {
+    background-color: rgba(219, 159, 165, .14);
+    padding-top: 2.2%;
+    padding-bottom: 2.2%;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1270px;
+    margin-left: 133px;
+}
+
+.bigger {
+    font-size: 18pt;
+    margin-bottom: 19%;
+}
+
+.up {
+    margin-top: 13%;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+.write {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+.write > nav {
+    display: flex;
+    gap: 20px;
+}
+
+.write > nav > a > img{
+    height: 40px;
+    width: 40px;
+}
+
+.call {
+    display: flex;
+    flex-direction: column;
+    font-family: "ISOCPEUR", sans-serif;
+    font-size: 15pt;
+}
+
+@media (max-width: 1280px) {
+    .head {
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+    .logo > img {
+        width: 150px;
+        height: 82px;
+    }
+    .head > nav {
+        gap: 40px;
+    }
+    .head > nav > a {
+        font-size: 15pt;
+    }
+    .cont {
+        max-width: 830px;
+        margin-left: 124px;
+    }
+    .bigger {
+        font-size: 15pt;
+        margin-bottom: 19%;
+    }
+    .time {
+        font-size: 12pt;
+    }
+
+    .write {
+        font-size: 12pt;
+    }
+    .write > nav > a > img{
+        height: 30px;
+        width: 30px;
+    }
+    .call {
+        font-size: 12pt;
+    }
+    main > p {
+        font-size: 18pt;
+        margin-top: 50px;
+        margin-bottom: 70px;
+        margin-left: 586px;
+    }
+    .about > img {
+        height: 300px;
+        width: 300px;
+    }
+    .inst > img {
+        height: 30px;
+        width: 30px;
+    }
+    .naming {
+        font-size: 15pt;
+    }
+    .style {
+        font-size: 12pt;
+    }
+    .nickname {
+        font-size: 15pt;
+    }
+    .butt {
+        font-size: 15pt;
+        padding: 15px 21px;
+        border-radius: 15px;
+        margin-top: 30px;
+        margin-bottom: 110px;
+    }
+    .masters {
+        max-width: 1040px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .head {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .logo > img {
+        width: 150px;
+        height: 82px;
+    }
+    .head > nav {
+        gap: 30px;
+    }
+    .head > nav > a {
+        font-size: 15pt;
+    }
+    .cont {
+        max-width: 830px;
+        margin-left: 124px;
+        gap: 20px;
+    }
+    .bigger {
+        font-size: 15pt;
+        margin-bottom: 19%;
+    }
+    .time {
+        font-size: 12pt;
+    }
+
+    .write {
+        font-size: 12pt;
+    }
+    .write > nav > a > img{
+        height: 30px;
+        width: 30px;
+    }
+    .call {
+        font-size: 12pt;
+    }
+    main > p {
+        font-size: 18pt;
+        margin-top: 40px;
+        margin-bottom: 60px;
+        margin-left: 450px;
+    }
+    .masters {
+        max-width: 500px;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+    .mas_right {
+        max-width: 460px;
+        margin-top: 11%;
+        gap: 0;
+    }
+    .black_geo {
+        margin-top: 11%;
+    }
+    .supegoran {
+        margin-top: 11%;
+    }
+}
+
+@media (max-width: 440px) {
+    .head {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    .logo > img {
+        width: 90px;
+        height: 50px;
+    }
+    .head > nav {
+        gap: 20px;
+    }
+    .head > nav > a {
+        font-size: 12pt;
+    }
+    .cont {
+        flex-direction: column;
+        max-width: 140px;
+        margin: 0 auto;
+    }
+    .bigger {
+        font-size: 12pt;
+        margin-bottom: 19%;
+    }
+    .time {
+        font-size: 9pt;
+    }
+
+    .write {
+        font-size: 9pt;
+    }
+    .write > nav > a > img{
+        height: 20px;
+        width: 20px;
+    }
+    .call {
+        font-size: 9pt;
+    }
+    main > p {
+        font-size: 15pt;
+        margin-top: 30px;
+        margin-bottom: 60px;
+        margin-left: 160px;
+    }
+    .about {
+        margin-bottom: 10%;
+    }
+    .name {
+        align-items: center;
+        margin: 0 auto;
+    }
+    .naming {
+        font-size: 15pt;
+    }
+    .style {
+        font-size: 12pt;
+    }
+    .inst {
+        font-size: 15pt;
+    }
+    .butt {
+        font-size: 12pt;
+        padding: 10px 15px;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+    .leoka {
+        flex-direction: column;
+    }
+    .supegoran {
+        flex-direction: column;
+    }
+    .frolikus {
+        flex-direction: column-reverse;
+    }
+    .black_geo {
+        flex-direction: column-reverse;
+    }
+    .leoka {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .supegoran {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .frolikus {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .black_geo {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .mas_right {
+        margin-bottom: 0;
+    }
+}
