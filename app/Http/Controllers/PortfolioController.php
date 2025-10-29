@@ -43,7 +43,8 @@ class PortfolioController extends Controller
             'is_admin' => Auth::user()->isAdmin()
         ]);
 
-        $artists = Artist::with('user')->active()->get();
+//        $artists = Artist::with('user')->active()->get();
+        $artists = Artist::with('user')->where('is_active', true)->get();
 
         \Log::info('Artists loaded', [
             'count' => $artists->count(),

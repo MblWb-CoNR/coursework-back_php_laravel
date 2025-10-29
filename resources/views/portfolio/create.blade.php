@@ -7,20 +7,6 @@
     <link rel="stylesheet" href="/css/works_style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
     <style>
-        @font-face {
-            font-family: "ISOCPEUR";
-            src: url(/fonts/ISOCPEUR.ttf);
-        }
-
-        @font-face {
-            font-family: "MuseoModerno";
-            src: url(/fonts/MuseoModerno-Regular.ttf);
-        }
-
-        @font-face {
-            font-family: "MuseoModerno.Bold";
-            src: url(/fonts/MuseoModerno-Bold.ttf);
-        }
 
         * {
             margin: 0;
