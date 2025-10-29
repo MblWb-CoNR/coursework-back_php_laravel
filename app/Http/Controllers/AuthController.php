@@ -56,7 +56,7 @@ class AuthController extends Controller
 
             Auth::login($user);
 
-            return redirect()->route('home')->with('success', 'Регистрация прошла успешно!');
+            return redirect()->route('profile')->with('success', 'Регистрация прошла успешно!');
 
         } catch (\Exception $e) {
             DB::rollBack();

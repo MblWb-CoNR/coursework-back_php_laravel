@@ -13,11 +13,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('file_path');
             $table->timestamps();
-        });
-    }
 
-    public function down()
-    {
-        Schema::dropIfExists('avatars');
+            // Добавляем уникальный индекс, чтобы у пользователя был только один аватар
+            $table->unique('user_id');
+        });
     }
 };

@@ -25,14 +25,14 @@
     <div class="head">
         <a class="logo" href="{{ route('home') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
         <nav>
-            <a href="{{ route('works') }}">Работы</a>
+            <a href="{{ route('portfolio.index') }}">Работы</a>
             <a href="{{ route('masters') }}">Мастера</a>
             <a href="{{ route('contacts') }}">Контакты</a>
             <a href="{{ route('sign_up') }}">Запись</a>
             @auth
                 <a href="{{ route('profile') }}">Профиль</a>
             @else
-                <a href="{{ route('auth.form') }}" style="text-decoration: underline;">Войти</a>
+                <a href="{{ route('auth.form') }}">Войти</a>
             @endauth
         </nav>
     </div>
@@ -81,9 +81,9 @@
 
                 <button type="submit">Регистрация</button>
             </form>
-            <p style="text-align: center; margin-top: 15px;">
+            <p class="varity">
                 Уже есть аккаунт?
-                <a href="#" onclick="showLogin()" style="color: #007bff; cursor: pointer;">Войти</a>
+                <a href="#" onclick="showLogin()">Войти</a>
             </p>
         </div>
 

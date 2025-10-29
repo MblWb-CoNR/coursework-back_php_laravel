@@ -9,7 +9,8 @@ class Avatar extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'file_path'];
+    protected $fillable = ['user_id',
+        'file_path'];
 
     public function user()
     {

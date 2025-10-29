@@ -16,6 +16,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 body {
@@ -44,7 +45,7 @@ body {
 }
 
 .head > nav > a {
-    text-decoration: none;
+
     color: #464646;
     font-size: 18pt;
     font-family: "ISOCPEUR", sans-serif;
@@ -128,6 +129,16 @@ button {
 button:hover {
     background-color: #FE4A9A;
     color: #E2E2E2;
+    cursor: pointer;
+}
+
+.varity {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.varity > a {
+    color: #FE4A9A;
     cursor: pointer;
 }
 
