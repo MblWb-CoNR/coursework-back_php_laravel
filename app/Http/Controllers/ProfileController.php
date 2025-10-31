@@ -26,19 +26,8 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
-        \Log::info('=== AVATAR UPLOAD DEBUG START ===');
-        \Log::info('User ID: ' . $user->id);
-        \Log::info('Has avatar file: ' . ($request->hasFile('avatar') ? 'YES' : 'NO'));
-
         if ($request->hasFile('avatar')) {
             $file = $request->file('avatar');
-            \Log::info('File details:', [
-                'original_name' => $file->getClientOriginalName(),
-                'extension' => $file->getClientOriginalExtension(),
-                'size' => $file->getSize(),
-                'mime_type' => $file->getMimeType(),
-                'is_valid' => $file->isValid() ? 'YES' : 'NO'
-            ]);
         }
 
         $validator = Validator::make($request->all(), [
@@ -47,7 +36,12 @@ class ProfileController extends Controller
             'messenger_id' => 'nullable|exists:messengers,id',
             'messenger_contact_url' => 'nullable|url',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
-        ]);
+        ], [
+                'phone_number.regex' => 'Введите корректный номер телефона. Пример: +7-999-888-77-66',
+                'avatar.image' => 'Файл должен быть изображением',
+                'avatar.mimes' => 'Допустимые форматы изображений: jpeg, png, jpg, gif, webp',
+                'avatar.max' => 'Максимальный размер файла: 5 МБ',
+            ]);
 
         if ($validator->fails()) {
             \Log::info('Validation failed', ['errors' => $validator->errors()->toArray()]);
@@ -82,15 +76,8 @@ class ProfileController extends Controller
                 $avatarPath = $this->handleAvatar($user, $request->file('avatar'));
                 \Log::info('Avatar processed, path: ' . $avatarPath);
 
-                // Проверим, создалась ли запись в БД
-                $avatarRecord = Avatar::where('user_id', $user->id)->first();
-                \Log::info('Avatar record in DB:', [
-                    'exists' => $avatarRecord ? 'YES' : 'NO',
-                    'record' => $avatarRecord
-                ]);
-            }
 
-            \Log::info('=== AVATAR UPLOAD DEBUG END ===');
+            }
 
             return redirect()->route('profile')->with('success', 'Профиль успешно обновлен!');
 

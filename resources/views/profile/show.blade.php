@@ -80,7 +80,7 @@
 
             <div class="form-group">
                 <label for="username">Имя пользователя *</label>
-                <input type="text" id="username" name="username" value="{{ old('username', $user->username) }}" required>
+                <input type="text" id="username" name="username" value="{{ old('username', e($user->username)) }}" required>
                 @error('username')
                 <span style="color: red;">{{ $message }}</span>
                 @enderror
@@ -89,11 +89,7 @@
             <!-- Контактная информация -->
             <div class="form-group">
                 <label for="phone_number">Номер телефона</label>
-                <input type="tel"
-                       id="phone_number"
-                       name="phone_number"
-                       value="{{ old('phone_number', $user->profile->phone_number ?? '') }}"
-                       placeholder="+7-999-888-77-66"
+                <input type="tel" id="phone_number" name="phone_number" value="{{ old('phone_number', e($user->profile->phone_number ?? '')) }}" placeholder="+7-999-888-77-66"
                        pattern="^(\+7|8)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"
                        title="Введите номер в формате: +7-999-888-77-66 или 8-999-888-77-66">
                 @error('phone_number')
@@ -119,9 +115,7 @@
 
             <div class="form-group">
                 <label for="messenger_contact_url">Ссылка на аккаунт в мессенджере</label>
-                <input type="url" id="messenger_contact_url" name="messenger_contact_url"
-                       value="{{ old('messenger_contact_url', $user->profile->messenger_contact_url ?? '') }}"
-                       placeholder="https://t.me/username">
+                <input type="url" id="messenger_contact_url" name="messenger_contact_url" value="{{ old('messenger_contact_url', e($user->profile->messenger_contact_url ?? '')) }}" placeholder="https://t.me/username">
                 @error('messenger_contact_url')
                 <span style="color: red;">{{ $message }}</span>
                 @enderror
@@ -141,8 +135,8 @@
                     const reader = new FileReader();
                     reader.onload = function(e) {
                         const avatarSection = document.querySelector('.avatar-section');
-                        avatarSection.innerHTML = `
-                <img src="${e.target.result}" alt="Предпросмотр" class="avatar-img">
+                        avatarSection.innerHTML =
+                `<img src="${e.target.result}" alt="Предпросмотр" class="avatar-img">
                 <div class="avatar-actions">
                     <button type="button" onclick="document.getElementById('avatar_input').click()" class="btn btn-secondary">
                         Сменить аватар
@@ -151,8 +145,7 @@
                         Удалить аватар
                     </button>
                 </div>
-                <input type="file" id="avatar_input" name="avatar" accept="image/*" style="display: none;" onchange="previewAvatar(this)">
-            `;
+                <input type="file" id="avatar_input" name="avatar" accept="image/*" style="display: none;" onchange="previewAvatar(this)">';
                     }
                     reader.readAsDataURL(input.files[0]);
                 }
@@ -181,7 +174,6 @@
         </script>
     </div>
 </main>
-
 <footer>
     <div class="cont">
         <div class="time">
@@ -208,47 +200,5 @@
         </div>
     </div>
 </footer>
-
-<script>
-    function previewAvatar(input) {
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const avatarSection = document.querySelector('.avatar-section');
-                avatarSection.innerHTML = `
-                        <img src="${e.target.result}" alt="Предпросмотр" class="avatar-img">
-                        <div class="avatar-actions">
-                            <button type="button" onclick="document.getElementById('avatar').click()" class="btn btn-secondary">
-                                Сменить аватар
-                            </button>
-                            <button type="button" onclick="deleteAvatar()" class="btn btn-danger">
-                                Удалить аватар
-                            </button>
-                        </div>
-                        <input type="file" id="avatar" name="avatar" accept="image/*" style="display: none;" onchange="previewAvatar(this)">
-                    `;
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    function deleteAvatar() {
-        if (confirm('Вы уверены, что хотите удалить аватарку?')) {
-            fetch('{{ route("profile.avatar.delete") }}', {
-                method: 'DELETE',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    'Content-Type': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    location.reload();
-                } else {
-                    alert('Ошибка при удалении аватарки');
-                }
-            });
-        }
-    }
-</script>
 </body>
 </html>

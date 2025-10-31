@@ -66,7 +66,14 @@ class PortfolioController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240',
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-        ]);
+        ], [
+                'image.required' => 'Выберите изображение работы',
+                'image.image' => 'Файл должен быть изображением',
+                'image.mimes' => 'Допустимые форматы изображений: jpeg, png, jpg, gif, webp',
+                'image.max' => 'Максимальный размер файла: 10 МБ',
+                'artist_id.required' => 'Выберите мастера',
+            ]
+        );
 
         if ($validator->fails()) {
             return redirect()->back()

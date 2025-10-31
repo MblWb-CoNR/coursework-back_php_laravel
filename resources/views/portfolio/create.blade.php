@@ -222,7 +222,6 @@
             <a href="{{ route('sign_up') }}">Запись</a>
             @auth
                 <a href="{{ route('profile') }}">Профиль</a>
-                <a href="{{ route('portfolio.create') }}" style="text-decoration: underline;">Добавить работу</a>
                 <form method="POST" action="{{ route('logout') }}" style="display: inline;">
                     @csrf
                     <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer; font-family: 'ISOCPEUR', sans-serif; font-size: 18pt;">Выйти</button>
@@ -273,7 +272,7 @@
 
             <div class="form-group">
                 <label for="title">Название работы *</label>
-                <input type="text" id="title" name="title" value="{{ old('title') }}" required placeholder="Например: Цветочный орнамент">
+                <input type="text" id="title" name="title" value="{{ old('title', '') }}" required placeholder="Например: Цветочный орнамент">
                 @error('title')
                 <span class="error">{{ $message }}</span>
                 @enderror
@@ -281,7 +280,7 @@
 
             <div class="form-group">
                 <label for="description">Описание работы</label>
-                <textarea id="description" name="description" placeholder="Описание стиля, техники, особенностей...">{{ old('description') }}</textarea>
+                <textarea id="description" name="description" placeholder="Описание стиля, техники, особенностей...">{{ old('description', '') }}</textarea>
                 @error('description')
                 <span class="error">{{ $message }}</span>
                 @enderror

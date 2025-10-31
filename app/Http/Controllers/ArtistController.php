@@ -61,11 +61,6 @@ class ArtistController extends Controller
         $services = Service::all();
 
         return view('artists.show', compact('artist', 'services', 'positiveFeedbacks', 'negativeFeedbacks'));
-
-//        catch (\Exception $e) {
-//            \Log::error('Error in artist show: ' . $e->getMessage());
-//            abort(404, 'Мастер не найден');
-//        }
     }
 
 
@@ -75,7 +70,12 @@ class ArtistController extends Controller
         $validator = Validator::make($request->all(), [
             'rating_positive' => 'required|boolean',
             'comment' => 'required|string|min:10|max:1000',
-        ]);
+        ], [
+                'comment.required' => 'Напишите текст отзыва',
+                'comment.min' => 'Отзыв должен содержать не менее :min символов',
+                'comment.max' => 'Отзыв должен содержать не более :max символов',
+                'rating_positive.required' => 'Выберите тип отзыва',
+            ]);
 
         if ($validator->fails()) {
             return redirect()->back()

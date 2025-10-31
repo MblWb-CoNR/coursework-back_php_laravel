@@ -29,6 +29,10 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'username' => 'required|string|max:255',
             'password' => 'required|string|min:8|confirmed',
+        ], [
+            'email.unique' => 'Пользователь с таким email уже существует',
+            'password.min' => 'Пароль должен содержать не менее :min символов',
+            'password.confirmed' => 'Пароли не совпадают',
         ]);
 
         if ($validator->fails()) {
@@ -72,6 +76,9 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'email_login' => 'required|email',
             'password_login' => 'required|string',
+        ], [
+            'email_login.required' => 'Введите email',
+            'password_login.required' => 'Введите пароль',
         ]);
 
         if ($validator->fails()) {
