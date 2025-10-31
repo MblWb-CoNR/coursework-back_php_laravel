@@ -33,8 +33,12 @@ class PortfolioController extends Controller
     // Показать форму добавления работы (только для админов)
     public function create()
     {
+        if (!Auth::check()) {
+            return redirect()->route('auth.form')->with('error', 'Для добавления работ необходимо войти в систему');
+        }
+
          if (!Auth::user()->isAdmin()) {
-             abort(403);
+             abort(403, 'Доступ запрещен');
          }
 
         \Log::info('Portfolio create method accessed', [
@@ -57,8 +61,13 @@ class PortfolioController extends Controller
     // Сохранить новую работу
     public function store(Request $request)
     {
+
+        if (!Auth::check()) {
+            return redirect()->route('auth.form')->with('error', 'Для добавления работ необходимо войти в систему');
+        }
+
         if (!Auth::user()->isAdmin()) {
-            abort(403);
+            abort(403, 'Доступ запрещен');
         }
 
         $validator = Validator::make($request->all(), [

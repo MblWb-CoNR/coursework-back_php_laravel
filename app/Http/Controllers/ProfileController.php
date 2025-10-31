@@ -15,6 +15,10 @@ class ProfileController extends Controller
 {
     public function show()
     {
+        if (!Auth::check()) {
+            return redirect()->route('auth.form')->with('error', 'Для просмотра профиля необходимо войти в систему');
+        }
+
         $user = Auth::user();
         $user->load(['profile.messenger', 'avatar']);
         $messengers = Messenger::all();
@@ -25,6 +29,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $user = Auth::user();
+
 
         if ($request->hasFile('avatar')) {
             $file = $request->file('avatar');
